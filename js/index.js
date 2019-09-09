@@ -14,7 +14,7 @@ function operationPressed(ev){
  document.querySelectorAll('.equal')
  .forEach(equal => equal.addEventListener('click', equalPressed));
   function equalPressed(){
-        display.value += eval(display.value);
+        display.value = eval(display.value);
   }
 
 document.querySelectorAll('.reset')
