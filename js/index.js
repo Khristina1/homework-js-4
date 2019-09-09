@@ -19,12 +19,3 @@ function resetPressed() {
     display.value = ' ';
 }
 
-document.querySelectorAll('.zero').forEach(zero=>zero.addEventListener('click', zeroPressed));
-function zeroPressed() {
-    const text = eval(display.value);
-    if (!(text === Number.POSITIVE_INFINITY)) {
-        display.value = text;
-    } else {
-        alert( 'Error');
-    }
-}
