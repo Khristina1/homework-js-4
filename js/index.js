@@ -6,11 +6,11 @@ const display = document.querySelector('.calculator .display'); // посила�
 display.value += ev.target.innerText; // кнопка на яку ми нажали показує на дисплей(target )
    }
 
-document.querySelectorAll('.operation button')
+ document.querySelectorAll('.operation button')
 .forEach(operation => operation.addEventListener('click', operationPressed));
 
 function operationPressed(ev){
-    display.value += ev.target.innerText;
+       display.value += ev.target.innerText;
 }
 
  document.querySelectorAll('.equal')
@@ -18,8 +18,20 @@ function operationPressed(ev){
   function equalPressed(){
       display.value = eval(display.value);
   }
+
 document.querySelectorAll('.reset')
 .forEach(reset => reset.addEventListener('click', resetPressed));
   function resetPressed(){
       display.value = ' ';
  }
+
+ document.querySelectorAll(' .zero')
+.forEach(zero => zero.addEventListener('click', zeroPressed));
+
+function zeroPressed(ev) {
+  ev = +ev;
+  if (!ev) {
+    display.value= Error('Invalid dividend ' + ev);
+  }
+}
+
