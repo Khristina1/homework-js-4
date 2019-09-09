@@ -2,7 +2,7 @@ const display = document.querySelector('.calculator .display');
 document.querySelectorAll(' .numbers button').forEach(numbers=>numbers.addEventListener('click', numbersPressed));
 function numbersPressed(ev) {
     display.value += ev.target.innerText;
-   
+
 }
 
 document.querySelectorAll('.operation button').forEach(operation=>operation.addEventListener('click', operationPressed));
@@ -17,4 +17,14 @@ function equalPressed() {
 document.querySelectorAll('.reset').forEach(reset=>reset.addEventListener('click', resetPressed));
 function resetPressed() {
     display.value = ' ';
+}
+
+document.querySelectorAll('.zero').forEach(zero=>zero.addEventListener('click', zeroPressed));
+function zeroPressed() {
+    const text = eval(display.value);
+    if (!(text === Number.POSITIVE_INFINITY)) {
+        display.value = text;
+    } else {
+        alert( 'Error');
+    }
 }
