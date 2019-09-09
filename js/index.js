@@ -8,15 +8,13 @@ display.value += ev.target.innerText; // кнопка на яку ми нажа�
 
  document.querySelectorAll('.operation button')
 .forEach(operation => operation.addEventListener('click', operationPressed));
-
 function operationPressed(ev){
        display.value += ev.target.innerText;
 }
-
  document.querySelectorAll('.equal')
  .forEach(equal => equal.addEventListener('click', equalPressed));
   function equalPressed(){
-      display.value = eval(display.value);
+        display.value += eval(display.value);
   }
 
 document.querySelectorAll('.reset')
@@ -24,14 +22,3 @@ document.querySelectorAll('.reset')
   function resetPressed(){
       display.value = ' ';
  }
-
- document.querySelectorAll(' .zero')
-.forEach(zero => zero.addEventListener('click', zeroPressed));
-
-function zeroPressed(ev) {
-  ev = +ev;
-  if (!ev) {
-    display.value= Error('Invalid dividend ' + ev);
-  }
-}
-
